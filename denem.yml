@@ -1,2 +1,2 @@
 server:
-    port:1340
+  port: 8761

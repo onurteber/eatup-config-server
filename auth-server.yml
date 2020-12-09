@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/eatup
+    username: postgres
+    password: sa
+    driverClassName: org.postgresql.Driver
+  application:
+    name: auth-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        profile: native
+        uri: http://localhost:8888/
+  jpa:
+    hibernate:
+      hbm2ddl:
+        auto: update
+      ejb:
+        naming_strategy: org.hibernate.cfg.EJB3NamingStrategy
+      show_sql: true
+      format_sql: true
+      use_sql_comments: false
+      type: all
+      disableConnectionTracking: true
+      default_schema: dental
+
+server:
+    port: 8383
